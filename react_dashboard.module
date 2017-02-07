@@ -53,6 +53,12 @@ function _react_dashboard_page($node_title) {
   return theme('react_dashboard');
 }
 
+/**
+ * Implements hook_page_alter().
+ */
+function react_dashboard_page_alter(&$page) {
+  header_remove('X-Frame-Options');
+}
 
 /**
  * Get csv by name.
